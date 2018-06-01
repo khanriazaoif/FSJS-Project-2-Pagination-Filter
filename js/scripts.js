@@ -164,6 +164,3 @@ function showPage(pageNumber, allStudents) {
     //     }
 
     //console.log(pages);
-
-
-    
