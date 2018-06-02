@@ -67,16 +67,16 @@ function showPage(pageNumber, allStudents) {
     // let linkParent = document.getElementsByTagName('li');
     // console.log(linkParent);    
     pagination.addEventListener('click', (event) => {
-         let liEvent = event.target.parentNode;
+         //let liEvent = event.target.parentNode;
          //let ulEvent = liEvent.parentNode;
-         console.log(liEvent);
+         //console.log(liEvent);
          console.log(event.target);
          //ulEvent.classList.remove('active');
-         for(let i = 0; i <= liEvent.length; i++){
+         //for(let i = 0; i <= liEvent.length; i++){
         //     // let removeClassActive = 
         //      ulEvent.classList.remove('active');
-            liEvent.classList.remove('active');
-           }
+          //  liEvent.classList.remove('active');
+           //}
                     if(event.target.classList.contains('active')) {
                         
                     event.target.classList.remove('active');
