@@ -5,6 +5,7 @@
 
 //Variable allStudents selects the list items with class .student-item
 let allStudents = document.querySelectorAll('.student-item');
+//console.log(allStudents);
 //
 
 //function showPage with two arguments, pageNumber and allStudents. There are two variables upperIndex and lowerIndex that take the pageNumber argument and both times 10. Then on upperIndex - 1 and on the lowerIndex -10. For example if you pass the numberal 1 as the pageNumber argument, then upperIndex = (1*10) - 1 and lowerIndex = (1 * 10) -10 which output upperIndex = 9; lowerIndex = 0; This would output the first 10 students.
@@ -44,8 +45,8 @@ function showPage(pageNumber, allStudents) {
 
     
     let listItems = document.getElementsByClassName('pagination');//.nextElementSibling;
-    console.log(pagination);
-    console.log(listItems);
+    //console.log(pagination);
+    //console.log(listItems);
     //For loop that loops over the number of students in your list divided by 10. Create an li element and then add to the Ul element.
     for(let i = 0; i <= allStudents.length/10; i++){
         let createLi = document.createElement('li');
@@ -59,108 +60,30 @@ function showPage(pageNumber, allStudents) {
         a.textContent = [i + 1];
        
     }
-    console.log(pagination);
-   console.log(listItems);
+    //console.log(pagination);
+   //console.log(listItems);
    
-
-    
-    // let linkParent = document.getElementsByTagName('li');
-    // console.log(linkParent);    
+   
     pagination.addEventListener('click', (event) => {
-         //let liEvent = event.target.parentNode;
-         //let ulEvent = liEvent.parentNode;
-         //console.log(liEvent);
-         console.log(event.target);
-         //ulEvent.classList.remove('active');
-         //for(let i = 0; i <= liEvent.length; i++){
-        //     // let removeClassActive = 
-        //      ulEvent.classList.remove('active');
-          //  liEvent.classList.remove('active');
-           //}
-                    if(event.target.classList.contains('active')) {
-                        
-                    event.target.classList.remove('active');
-                    } else {
-                        event.target.className = 'active';
-                        console.log(event.target);
-                      
-                    //}
-                }
+        let anchorTags = document.querySelectorAll('.pagination a');
+        for(let i = 0; i < anchorTags.length; i++){
+            anchorTags[i].classList.remove('active');
+        }
+       
+        console.log(anchorTags);
+        
+                if(event.target.classList.contains('active')) {
+                    
+                event.target.classList.remove('active');
+                } else {
+                    event.target.className = 'active';
+                    console.log(event.target);
+                    
+             }
             
          });
-        
-        //  let linkParent = document.getElementsByTagName('li');
-        //  console.log(linkParent);    
-        //   for (let i = 0; i < linkParent.length; i++) {
-        //       linkParent[i].addEventListener('click', () => {
-        //           let current = document.querySelector('a');
-        //           console.log(current);
-        //           current.className = 'active';
-        //           console.log(a);
-        //       });
-                 
-    //  }
 }
     // Function appendPagelinks with argument allStudents which is the entire list of students.
     appendPagelinks(allStudents);
 
 
-//**********BELOW IS RANDOM INFORMATION IN NO SPECIFIC ORDER**********//
-
-// .pagination li a{
-//     border: 1px solid #eaeaea;
-//     border-radius: 5px;
-//     padding: 3px 8px;
-//     text-decoration: none;
-//     color: #4ba6c3;
-//   }
-
-//**********WHAT THE PAGINATION linkParentS SHOULD LOOK LIKE**********//
-
-//     <div class="pagination">
-//     <ul>
-//       <li>
-//         <a class="active" href="#">1</a>
-//       </li>
-//        <li>
-//         <a href="#">2</a>
-//       </li>
-//        <li>
-//         <a href="#">3</a>
-//       </li>
-//        <li>
-//         <a href="#">4</a>
-//       </li>
-//        <li>
-//         <a href="#">5</a>
-//       </li>
-//     </ul>
-//   </div>
-
-
-//****************
-
-  //console.log(pages);
-    // create a page linkParent section
-    // "for" every page
-    // add a page linkParent to the page linkParent section
-    // remove the old page linkParent section from the site
-    // append our new page linkParent section to the site
-    // define what happens when you click a linkParent (event listener)
-    // Use showPage to display the page for the linkParent clicked
-    // mark that linkParent as "active"    
-
-    // let divPaginationUl = document.createElement('ul');
-    // console.log(divPaginationUl);
-    // let paginationUl
-
-
-      
-    // listUl.addEventListener('click', (event) => {
-    //     if (event.target.tagName == 'linkParent') {
-    //       let li = event.target.parentNode;
-    //       let ul = li.parentNode;
-    //       ul.removeChild(li);
-    //     }
-
-    //console.log(pages);
