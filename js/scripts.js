@@ -44,30 +44,20 @@ function showPage(pageNumber, allStudents) {
     pagination.appendChild(createUl);
 
     
-    let listItems = document.getElementsByClassName('pagination');//.nextElementSibling;
-    //console.log(pagination);
-    //console.log(listItems);
-    //For loop that loops over the number of students in your list divided by 10. Create an li element and then add to the Ul element.
+    let listItems = document.getElementsBy
     for(let i = 0; i <= allStudents.length/10; i++){
         let createLi = document.createElement('li');
         createUl.appendChild(createLi);
         let li = document.getElementsByTagName('li');
-        //console.log(li);
         let a = document.createElement('a');
         a.setAttribute('href','#');
              
         createLi.appendChild(a);
         a.textContent = [i + 1];
-        //console.log(createLi);
        if (i === 0){
            a.classList.add('active');
-           console.log(a);
        }
-        // for(let i = 0; i <= createLi.length; i++) {
-        //     let a1 = createLi[0];
-        //     console.log(a1);
-       // }
-
+       
     }
 
   
@@ -78,8 +68,6 @@ function showPage(pageNumber, allStudents) {
         for(let i = 0; i < anchorTags.length; i++){
             anchorTags[i].classList.remove('active');
         }
-       
-        console.log(anchorTags);
         
                 if(event.target.classList.contains('active')) {
                     
@@ -89,10 +77,19 @@ function showPage(pageNumber, allStudents) {
                     console.log(event.target);
                     
              }
+                    function buttonNumber(){
+                    let button = parseInt(event.target.textContent);
+                    showPage(button, allStudents);
+                }
+            buttonNumber();
             
-         });
-}
+        });
+
+
+        }
+
     // Function appendPagelinks with argument allStudents which is the entire list of students.
     appendPagelinks(allStudents);
+       
 
-
+    
