@@ -52,16 +52,25 @@ function showPage(pageNumber, allStudents) {
         let createLi = document.createElement('li');
         createUl.appendChild(createLi);
         let li = document.getElementsByTagName('li');
-       
+        //console.log(li);
         let a = document.createElement('a');
         a.setAttribute('href','#');
              
         createLi.appendChild(a);
         a.textContent = [i + 1];
-       
+        //console.log(createLi);
+       if (i === 0){
+           a.classList.add('active');
+           console.log(a);
+       }
+        // for(let i = 0; i <= createLi.length; i++) {
+        //     let a1 = createLi[0];
+        //     console.log(a1);
+       // }
+
     }
-    //console.log(pagination);
-   //console.log(listItems);
+
+  
    
    
     pagination.addEventListener('click', (event) => {
