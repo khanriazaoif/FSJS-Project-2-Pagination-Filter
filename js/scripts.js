@@ -17,13 +17,98 @@ function showPage(pageNumber, allStudents) {
     allStudents[i].style.display = 'none';
         if( i >= lowerIndex && i <= upperIndex) {
             allStudents[i].style.display = 'block';
+            console.log(allStudents[i]);
         }
   } 
  
 } 
 //Calling the showPage function, passing the arguments 1 for the pageNumber and allStudents is the document.querySelectorAll('.student-item'); student list items.
  showPage(1, allStudents);
- 
+
+
+function searchBar(){
+    let div = document.createElement('div');
+    let h2 = document.querySelector('h2').parentNode;
+    h2.appendChild(div).className = 'student-search';
+    let studentSearch = document.getElementsByClassName('student-search')[0];
+    let createInput = document.createElement('input');
+    let button = document.createElement('button');
+    button.textContent = 'Search';
+    createInput.placeholder = "Search for students...";
+    studentSearch.appendChild(createInput);
+    studentSearch.appendChild(button);
+    
+    const input = document.querySelector('input');
+    const studentDetails = document.querySelectorAll('.student-details');
+    
+//     studentSearch.addEventListener('change', (e) => {
+//         console.log(studentDetails);
+//         console.log(input.value);
+//         console.log(studentDetails[0].innerText);
+//         e.preventDefault();
+//         for(let i = 0; i < studentDetails.length; i++){
+//     if(input.value === studentDetails[0].innerText){
+//         console.log(studentDetails[i]);
+//         studentDetails[0].style.display = 'block';
+//         console.log(i);
+//     } else {
+//        // console.log(studentDetails[i]);
+//         studentDetails[i].style.display = 'none';
+//         }
+//    }
+//  });
+
+    studentSearch.addEventListener('keyup', (e) => {
+        function searchStudentName() {
+            var filter = input.value.toUpperCase();
+            ul = document.getElementsByClassName('student-list')[0];
+            li = ul.getElementsByClassName('student-item cf');
+            console.log(li);
+        
+            for(i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName('h3')[0];
+                if(a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+            
+        }
+        searchStudentName();
+    
+        function searchStudentEmail() {
+            var filter = input.value.toUpperCase();
+            ul = document.getElementsByClassName('student-list')[0];
+            li = ul.getElementsByClassName('student-item cf');
+            console.log(li);
+        
+            for(i = 0; i < li.length; i++) {
+                a = li[i].getElementsByClassName('email')[0];
+                if(a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+            
+        }
+        searchStudentEmail();
+
+    });
+}   
+
+
+
+
+// <!-- student search HTML to add dynamically -->
+//         <div class="student-search">
+//           <input placeholder="Search for students...">
+//           <button>Search</button>
+//         </div>
+//         <!-- end search -->
+
+searchBar();
 //Function appendPagelinks with the argument allStudents which is the list of students
  function appendPagelinks(allStudents) {
     // Variable pages to determine how many pages for this student list
@@ -88,8 +173,6 @@ function showPage(pageNumber, allStudents) {
 
         }
 
+
     // Function appendPagelinks with argument allStudents which is the entire list of students.
     appendPagelinks(allStudents);
-       
-
-    
