@@ -14,7 +14,7 @@ function showPage(pageNumber, allStudents) {
 }
 //pass the function 2 arguments. 1 for the page and the other is the students
 showPage(1, allStudents);
-//creating search bar
+//creating search
 function searchBar() {
 	let div = document.createElement('div');
 	let h2 = document.querySelector('h2').parentNode;
@@ -47,7 +47,7 @@ function searchBar() {
 			var filter = input.value.toUpperCase();
 			ul = document.getElementsByClassName('student-list')[0];
 			li = ul.getElementsByClassName('student-item cf');
-			for (i = 0; i < li.length; i++) {
+			for (let i = 0; i < li.length; i++) {
 				a = li[i].getElementsByClassName('email')[0];
 				if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
 					li[i].style.display = "";
@@ -63,7 +63,7 @@ function searchBar() {
 		ul = document.getElementsByClassName('student-list')[0];
 		li = ul.getElementsByClassName('student-item cf')[0];
 		console.log(li);
-		for (i = 0; i < li.length; i++) {
+		for (let i = 0; i < li.length; i++) {
 			if (li.style.display === 'block') {
 				let pages = Math.ceil(li.length / 10);
 				console.log(pages);
@@ -107,6 +107,7 @@ function appendPagelinks(allStudents) {
 		}
 	}
 	pagination.addEventListener('click', (event) => {
+        //if(e.target.tagName === 'li');
 		let anchorTags = document.querySelectorAll('.pagination a');
 		for (let i = 0; i < anchorTags.length; i++) {
 			anchorTags[i].classList.remove('active');
