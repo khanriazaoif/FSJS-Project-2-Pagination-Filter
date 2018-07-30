@@ -37,7 +37,7 @@ function searchBar() {
 				if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
 					li[i].style.display = "";
 				} else {
-					li[i].style.display = "none";
+				//	li[i].style.display = "none";
 				}
 			}
 		}
@@ -59,21 +59,21 @@ function searchBar() {
 		searchStudentEmail();
 	});
 
-	function searchPaginationLinks() {
-		ul = document.getElementsByClassName('student-list')[0];
-		li = ul.getElementsByClassName('student-item cf')[0];
-		console.log(li);
-		for (let i = 0; i < li.length; i++) {
-			if (li.style.display === 'block') {
-				let pages = Math.ceil(li.length / 10);
-				console.log(pages);
-			} else {
-				let pages = Math.ceil(li.length / 10);
-				console.log(pages);
-			}
-		}
-	}
-	searchPaginationLinks();
+	// function searchPaginationLinks() {
+	// 	ul = document.getElementsByClassName('student-list')[0];
+	// 	li = ul.getElementsByClassName('student-item cf')[0];
+	// 	console.log(li);
+	// 	for (let i = 0; i < li.length; i++) {
+	// 		if (li.style.display === 'block') {
+	// 			let pages = Math.ceil(li.length / 10);
+	// 			console.log(pages);
+	// 		} else {
+	// 			let pages = Math.ceil(li.length / 10);
+	// 			console.log(pages);
+	// 		}
+	// 	}
+	// }
+	// searchPaginationLinks();
 }
 searchBar();
 //Function appendPagelinks with the argument allStudents which is the list of students
