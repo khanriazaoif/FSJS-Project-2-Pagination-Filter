@@ -15,13 +15,10 @@ function showPage(pageNumber, allStudents) {
 //pass the function 2 arguments. 1 for the page and the other is the students
 showPage(1, allStudents);
 
-function appendPagelinks(allStudents) {
-	// Variable pages to determine how many pages for this student list
-	let pages = Math.ceil(allStudents.length / 10);
+function appendPageLinks(allStudents) {
 	let ul = document.getElementsByTagName('ul')[0];
 	let paginationDiv = ul.parentNode;
 	let div = document.createElement('div');
-	// Apend the new div element with class name pagination to the Ul
 	paginationDiv.appendChild(div).className = 'pagination';
 	let pagination = document.getElementsByClassName('pagination')[0];
 	let createUl = document.createElement('ul');
@@ -29,7 +26,6 @@ function appendPagelinks(allStudents) {
 	for (let i = 0; i <= allStudents.length / 10; i++) {
 		let createLi = document.createElement('li');
 		createUl.appendChild(createLi);
-		let li = document.getElementsByTagName('li');
 		let a = document.createElement('a');
 		a.setAttribute('href', '#');
 		createLi.appendChild(a);
@@ -38,6 +34,28 @@ function appendPagelinks(allStudents) {
 			a.classList.add('active');
 		}
     }
-}    
+    function paginationEventListener(){
+        pagination.addEventListener('click', (event) => {
+            let anchorTags = document.querySelectorAll('.pagination a');
+            for (let i = 0; i < anchorTags.length; i++) {
+                anchorTags[i].classList.remove('active');
+            }
+            if (event.target.classList.contains('active')) {
+                event.target.classList.remove('active');
+            } else {
+                event.target.className = 'active';
+                console.log(event.target);
+            }
 
-appendPagelinks(allStudents);
+            function buttonNumber() {
+                let button = parseInt(event.target.textContent);
+                showPage(button, allStudents);
+            }
+            buttonNumber();
+        });
+        
+    }
+    paginationEventListener();
+}
+
+appendPageLinks(allStudents);
