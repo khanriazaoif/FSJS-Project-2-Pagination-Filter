@@ -23,11 +23,8 @@ function appendPagelinks(allStudents) {
 	let div = document.createElement('div');
 	// Apend the new div element with class name pagination to the Ul
 	paginationDiv.appendChild(div).className = 'pagination';
-	// Variable pagination that selects the class pagination that was previously created
 	let pagination = document.getElementsByClassName('pagination')[0];
-	// Variable createUl creates a ul element
 	let createUl = document.createElement('ul');
-	// Variable pagination and as a child node the ul created above
 	pagination.appendChild(createUl);
 	for (let i = 0; i <= allStudents.length / 10; i++) {
 		let createLi = document.createElement('li');
