@@ -14,3 +14,33 @@ function showPage(pageNumber, allStudents) {
 }
 //pass the function 2 arguments. 1 for the page and the other is the students
 showPage(1, allStudents);
+
+function appendPagelinks(allStudents) {
+	// Variable pages to determine how many pages for this student list
+	let pages = Math.ceil(allStudents.length / 10);
+	let ul = document.getElementsByTagName('ul')[0];
+	let paginationDiv = ul.parentNode;
+	let div = document.createElement('div');
+	// Apend the new div element with class name pagination to the Ul
+	paginationDiv.appendChild(div).className = 'pagination';
+	// Variable pagination that selects the class pagination that was previously created
+	let pagination = document.getElementsByClassName('pagination')[0];
+	// Variable createUl creates a ul element
+	let createUl = document.createElement('ul');
+	// Variable pagination and as a child node the ul created above
+	pagination.appendChild(createUl);
+	for (let i = 0; i <= allStudents.length / 10; i++) {
+		let createLi = document.createElement('li');
+		createUl.appendChild(createLi);
+		let li = document.getElementsByTagName('li');
+		let a = document.createElement('a');
+		a.setAttribute('href', '#');
+		createLi.appendChild(a);
+		a.textContent = [i + 1];
+		if (i === 0) {
+			a.classList.add('active');
+		}
+    }
+}    
+
+appendPagelinks(allStudents);
