@@ -59,3 +59,30 @@ function appendPageLinks(allStudents) {
 }
 
 appendPageLinks(allStudents);
+
+
+//Exceeds
+
+    function searchBar() {
+        //create a div append a div with class name student-search
+        function createDiv() {
+            let div = document.createElement('div');
+            let h2 = document.querySelector('h2').parentNode;
+            h2.appendChild(div).className = 'student-search';
+            let studentSearch = document.getElementsByClassName('student-search')[0];
+        }
+        
+        function createInput() {
+            let studentSearch = document.getElementsByClassName('student-search')[0];
+            let createInput = document.createElement('input');
+            createInput.placeholder = "Search for students...";
+            studentSearch.appendChild(createInput);
+        }
+        //create a input
+        //create a button
+        //search a students name
+        createDiv();
+        createInput();
+    }
+
+    searchBar();
