@@ -78,11 +78,19 @@ appendPageLinks(allStudents);
             createInput.placeholder = "Search for students...";
             studentSearch.appendChild(createInput);
         }
+
+        function createButton(){
+            let studentSearch = document.getElementsByClassName('student-search')[0];
+            let button = document.createElement('button');
+            studentSearch.appendChild(button);
+            button.textContent = 'Search';
+        }
         //create a input
         //create a button
         //search a students name
         createDiv();
         createInput();
+        createButton();
     }
 
     searchBar();
