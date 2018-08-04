@@ -34,6 +34,28 @@ function appendPageLinks(allStudents) {
 			a.classList.add('active');
 		}
     }
-}    
+    function paginationEventListener(){
+        pagination.addEventListener('click', (event) => {
+            let anchorTags = document.querySelectorAll('.pagination a');
+            for (let i = 0; i < anchorTags.length; i++) {
+                anchorTags[i].classList.remove('active');
+            }
+            if (event.target.classList.contains('active')) {
+                event.target.classList.remove('active');
+            } else {
+                event.target.className = 'active';
+                console.log(event.target);
+            }
+
+            function buttonNumber() {
+                let button = parseInt(event.target.textContent);
+                showPage(button, allStudents);
+            }
+            buttonNumber();
+        });
+        
+    }
+    paginationEventListener();
+}
 
 appendPageLinks(allStudents);
