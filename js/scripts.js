@@ -95,20 +95,7 @@ appendPageLinks(allStudents);
         console.log(studentSearch);
         const input = document.querySelector('input');
 	    studentSearch.addEventListener('keyup', (e) => {
-		function searchStudentName() {
-			var filter = input.value.toUpperCase();
-			ul = document.getElementsByClassName('student-list')[0];
-			li = ul.getElementsByClassName('student-item cf');
-			for (i = 0; i < li.length; i++) {
-				a = li[i].getElementsByTagName('h3')[0];
-				if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-					li[i].style.display = "";
-				} else {
-				//	li[i].style.display = "none";
-				}
-			}
-		}
-		searchStudentName();
+		
 
 		function searchStudentEmail() {
 			var filter = input.value.toUpperCase();
@@ -117,9 +104,9 @@ appendPageLinks(allStudents);
 			for (let i = 0; i < li.length; i++) {
 				a = li[i].getElementsByClassName('email')[0];
 				if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-					li[i].style.display = "";
+                    li[i].style.display = "";
 				} else {
-					li[i].style.display = "none";
+                    li[i].style.display = "none";
 				}
 			}
 		}
