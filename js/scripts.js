@@ -17,7 +17,7 @@ showPage(1, allStudents);
 
 function appendPagelinks(allStudents) {
 	// Variable pages to determine how many pages for this student list
-	let pages = Math.ceil(allStudents.length / 10);
+	//let pages = Math.ceil(allStudents.length / 10);
 	let ul = document.getElementsByTagName('ul')[0];
 	let paginationDiv = ul.parentNode;
 	let div = document.createElement('div');
@@ -32,7 +32,7 @@ function appendPagelinks(allStudents) {
 	for (let i = 0; i <= allStudents.length / 10; i++) {
 		let createLi = document.createElement('li');
 		createUl.appendChild(createLi);
-		let li = document.getElementsByTagName('li');
+		//slet li = document.getElementsByTagName('li');
 		let a = document.createElement('a');
 		a.setAttribute('href', '#');
 		createLi.appendChild(a);
